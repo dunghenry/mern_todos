@@ -1,0 +1,3 @@
+12-05-2022	16:12:13 - a is not defined - src\index.js
+12-05-2022	17:54:17 - querySrv ECONNREFUSED _mongodb._tcp.database.x5e16.mongodb.net - src\config\connectDB.js
+12-05-2022	17:54:17 - querySrv ECONNREFUSED _mongodb._tcp.database.x5e16.mongodb.net - src\config\connectDB.js
