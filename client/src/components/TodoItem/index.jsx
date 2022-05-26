@@ -16,4 +16,4 @@ const TodoItem = ({ id, title, description, completed, deleteTodo, handleComplet
   );
 };
 
-export default TodoItem;
+export default React.memo(TodoItem);

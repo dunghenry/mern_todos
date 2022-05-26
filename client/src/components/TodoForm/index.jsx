@@ -36,34 +36,23 @@ const TodoForm = ({ title, description, setDescription, setTitle, todos, setTodo
                 }
                 return todo;
             })
-            console.log(newTodos)
+            // console.log(newTodos)
             const response = await axios.put(`https://express-mongodb-todos.herokuapp.com/api/v1/todos/${idUpdated}`, updateTodo)
             setTitle('');
             setDescription('')
             setIsUpdate(false);
+            // console.log(response);
             toast.success("Updated todo successfully!")
         } catch (error) {
             console.log(error.message);
-
+            toast.error(error.response.data)
         }
     }
-    React.useEffect(() => {
-        if (idUpdated) {
-            const getTodo = async () => {
-                const response = await axios.get(
-                    `https://express-mongodb-todos.herokuapp.com/api/v1/todos/${idUpdated}`
-                );
-                setDescription(response.data.description);
-                setTitle(response.data.title);
-            };
-            getTodo();
-        }
-    }, [idUpdated])
     const removeUpdate = () => {
         setIsUpdate(false)
         setTitle('');
         setDescription('');
-        toast.success("Closed update!")
+        toast.success("Closed form update!")
     }
     return (
         <>
@@ -95,4 +84,4 @@ const TodoForm = ({ title, description, setDescription, setTitle, todos, setTodo
     );
 };
 
-export default TodoForm;
+export default React.memo(TodoForm);
