@@ -1,1 +1,0 @@
-Deploy:https://mern-todos-app-2022.netlify.app
